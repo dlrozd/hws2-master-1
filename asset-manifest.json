@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/dlrozd/hws2-master-1/static/css/main.3df18337.css",
+    "main.js": "/dlrozd/hws2-master-1/static/js/main.c93e7014.js",
+    "static/js/787.66cb4309.chunk.js": "/dlrozd/hws2-master-1/static/js/787.66cb4309.chunk.js",
+    "static/media/avatar.png": "/dlrozd/hws2-master-1/static/media/avatar.d947cb9d0d13765666b6.png",
+    "index.html": "/dlrozd/hws2-master-1/index.html",
+    "main.3df18337.css.map": "/dlrozd/hws2-master-1/static/css/main.3df18337.css.map",
+    "main.c93e7014.js.map": "/dlrozd/hws2-master-1/static/js/main.c93e7014.js.map",
+    "787.66cb4309.chunk.js.map": "/dlrozd/hws2-master-1/static/js/787.66cb4309.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3df18337.css",
+    "static/js/main.c93e7014.js"
+  ]
+}
