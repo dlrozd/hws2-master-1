@@ -1,5 +1,6 @@
 .buttonContainer {
     display: flex;
+    justify-content: center;
     gap: 24px;
     margin-bottom: 32px;
 }
@@ -21,6 +22,7 @@
 }
 
 .button {
+
     padding: 5px 15px;
 
     background: transparent;
@@ -49,6 +51,9 @@
 
 .affairs {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
     gap: 17px;
     flex-wrap: wrap;
     max-width: 450px;
