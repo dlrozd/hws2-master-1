@@ -10,6 +10,7 @@ type GreetingPropsType = {
     error: string
     totalUsers: number
     lastUserName?: string
+
 }
 
 // презентационная компонента (для верстальщика)
