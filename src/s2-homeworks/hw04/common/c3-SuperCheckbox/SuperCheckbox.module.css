@@ -13,32 +13,43 @@
        Если задать значение none, то чекбокс пропадет, но по нему, тем не менее,
        можно щелкать и состояние чекбокса будет меняться*/
 
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
 
     background-repeat: no-repeat;
     background-position: center center;
+    background-color: white;
 
     /* background-size: 90% 90%; */
     vertical-align: middle;
-    margin-right: 8px;
-    border-radius: 3px;
-    border: 2px solid #06c;
+    margin-right: 10px;
+    border-radius: 4px;
+    border: 2px solid #0066CC;
     cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
 }
 
 .checkbox:checked {
     appearance: none;
-
     background-image: url('checked.svg');
-    /*background: #99ff99;*/
+    background-color: #0066CC;
+    border-color: #0066CC;
+}
+
+.checkbox:hover {
+    border-color: #0052A3;
 }
 
 .checkbox:focus {
-    border-color: #0059b3;
+    border-color: #0052A3;
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+    outline: none;
 }
 
 .spanClassName {
     font-family: 'Montserrat', sans-serif;
-    color: #06c;
+    color: #333333;
+    font-size: 14px;
+    user-select: none;
 }
