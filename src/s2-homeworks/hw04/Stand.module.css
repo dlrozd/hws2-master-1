@@ -5,6 +5,17 @@
     padding: 40px 20px;
     gap: 60px;
     flex-wrap: wrap;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .stand {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        padding: 30px 15px;
+    }
 }
 
 .inputs {
@@ -12,6 +23,15 @@
     flex-direction: column;
     gap: 30px;
     min-width: 280px;
+    flex: 1;
+    max-width: 400px;
+}
+
+@media (max-width: 768px) {
+    .inputs {
+        width: 100%;
+        max-width: 100%;
+    }
 }
 
 .buttons {
@@ -19,6 +39,14 @@
     flex-direction: column;
     gap: 16px;
     min-width: 200px;
+    flex: 0.8;
+}
+
+@media (max-width: 768px) {
+    .buttons {
+        width: 100%;
+        max-width: 400px;
+    }
 }
 
 .checkboxes {
@@ -26,4 +54,12 @@
     flex-direction: column;
     gap: 24px;
     min-width: 200px;
+    flex: 0.8;
+}
+
+@media (max-width: 768px) {
+    .checkboxes {
+        width: 100%;
+        max-width: 400px;
+    }
 }
