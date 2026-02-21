@@ -1,8 +1,17 @@
 .label {
     display: flex;
     align-items: center;
-
     cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.label:hover .checkbox {
+    border-color: #0052A3;
+    box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.08);
+}
+
+.label:active {
+    opacity: 0.8;
 }
 
 /*input[type="checkbox"] - no*/
@@ -19,6 +28,7 @@
     background-repeat: no-repeat;
     background-position: center center;
     background-color: white;
+    background-size: 14px;
 
     /* background-size: 90% 90%; */
     vertical-align: middle;
@@ -26,7 +36,7 @@
     border-radius: 4px;
     border: 2px solid #0066CC;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.2s ease-in-out;
     flex-shrink: 0;
 }
 
@@ -35,16 +45,33 @@
     background-image: url('checked.svg');
     background-color: #0066CC;
     border-color: #0066CC;
+    animation: checkBounce 0.3s ease;
+}
+
+@keyframes checkBounce {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
 }
 
 .checkbox:hover {
     border-color: #0052A3;
+    transform: scale(1.05);
 }
 
 .checkbox:focus {
     border-color: #0052A3;
-    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.12);
     outline: none;
+}
+
+.checkbox:focus-visible {
+    outline: 2px solid #0066CC;
+    outline-offset: 2px;
+}
+
+.checkbox:active {
+    transform: scale(0.95);
 }
 
 .spanClassName {
@@ -52,4 +79,5 @@
     color: #333333;
     font-size: 14px;
     user-select: none;
+    line-height: 1.4;
 }
