@@ -13,6 +13,7 @@
     letter-spacing: 0.3px;
     position: relative;
     overflow: hidden;
+    text-transform: capitalize;
 }
 
 .button::before {
@@ -23,9 +24,9 @@
     width: 0;
     height: 0;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.3);
     transform: translate(-50%, -50%);
-    transition: width 0.6s, height 0.6s;
+    transition: width 0.6s ease-out, height 0.6s ease-out;
 }
 
 .button:active::before {
@@ -45,6 +46,7 @@
     color: #0066CC;
     border: 2px solid #0066CC;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 8px 22px;
 }
 
 .default {
@@ -62,19 +64,20 @@
 .default:hover {
     background: linear-gradient(135deg, #0052A3 0%, #004080 100%);
     box-shadow: 0 4px 12px rgba(0, 102, 204, 0.35);
-    transform: translateY(-1px);
+    transform: translateY(-2px);
 }
 
 .red:hover {
     background: linear-gradient(135deg, #A30F2D 0%, #8A0C25 100%);
     box-shadow: 0 4px 12px rgba(204, 20, 57, 0.35);
-    transform: translateY(-1px);
+    transform: translateY(-2px);
 }
 
 .secondary:hover {
     background: #F0F7FF;
     border-color: #0052A3;
     box-shadow: 0 2px 8px rgba(0, 102, 204, 0.15);
+    transform: translateY(-1px);
 }
 
 .default:active {
@@ -102,6 +105,7 @@
     box-shadow: none;
     transform: none;
     border-color: #D9D9D9;
+    opacity: 0.6;
 }
 
 .button:disabled::before {
@@ -116,4 +120,32 @@
 .secondary:disabled {
     background: white;
     border-color: #D9D9D9;
+    color: #9A9A9A;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .button {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .secondary {
+        background: #1a1a1a;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .secondary:hover {
+        background: #0a2540;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .button {
+        transition: none;
+    }
+
+    .button::before {
+        display: none;
+    }
 }
