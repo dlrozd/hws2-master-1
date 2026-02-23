@@ -17,18 +17,25 @@
     background: white;
 }
 
-.input:hover {
+.input:hover:not(:focus) {
     border-color: #B0B0B0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .input::placeholder {
     color: #999999;
     opacity: 1;
+    transition: opacity 0.2s;
+}
+
+.input:focus::placeholder {
+    opacity: 0.5;
 }
 
 .inputWrapper {
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .superInput {
@@ -46,17 +53,19 @@
     background: #FFF5F7;
     font-family: 'Montserrat', sans-serif;
     transition: all 0.2s ease-in-out;
-    animation: shake 0.3s ease-in-out;
+    animation: shake 0.4s cubic-bezier(.36,.07,.19,.97);
 }
 
 @keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-4px); }
-    75% { transform: translateX(4px); }
+    10%, 90% { transform: translateX(-1px); }
+    20%, 80% { transform: translateX(2px); }
+    30%, 50%, 70% { transform: translateX(-3px); }
+    40%, 60% { transform: translateX(3px); }
 }
 
-.errorInput:hover {
+.errorInput:hover:not(:focus) {
     border-color: #A30F2D;
+    box-shadow: 0 1px 3px rgba(204, 20, 57, 0.1);
 }
 
 .errorInput:focus {
@@ -77,16 +86,48 @@
     min-height: 18px;
     line-height: 18px;
     font-weight: 500;
-    animation: fadeIn 0.3s ease-in;
+    animation: fadeInSlide 0.3s ease-out;
+    display: flex;
+    align-items: center;
+    gap: 4px;
 }
 
-@keyframes fadeIn {
+.error::before {
+    content: '⚠';
+    font-size: 14px;
+}
+
+@keyframes fadeInSlide {
     from {
         opacity: 0;
-        transform: translateY(-4px);
+        transform: translateY(-8px);
     }
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .input, .errorInput {
+        background: #2a2a2a;
+        color: #e0e0e0;
+    }
+
+    .input {
+        border-color: #4a4a4a;
+    }
+
+    .input:focus {
+        border-color: #0066CC;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .input, .errorInput, .error {
+        animation: none;
+        transition: none;
     }
 }
