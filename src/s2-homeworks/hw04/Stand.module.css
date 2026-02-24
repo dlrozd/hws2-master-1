@@ -7,6 +7,18 @@
     flex-wrap: wrap;
     max-width: 1400px;
     margin: 0 auto;
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @media (max-width: 768px) {
@@ -25,12 +37,43 @@
     min-width: 280px;
     flex: 1;
     max-width: 400px;
+    animation: slideInLeft 0.6s ease-out;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.inputs > div {
+    animation: fadeInUp 0.4s ease-out backwards;
+}
+
+.inputs > div:nth-child(1) { animation-delay: 0.1s; }
+.inputs > div:nth-child(2) { animation-delay: 0.2s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @media (max-width: 768px) {
     .inputs {
         width: 100%;
         max-width: 100%;
+        animation: fadeIn 0.5s ease-in;
     }
 }
 
@@ -40,12 +83,34 @@
     gap: 16px;
     min-width: 200px;
     flex: 0.8;
+    animation: slideInUp 0.6s ease-out 0.2s backwards;
 }
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.buttons > div {
+    animation: fadeInUp 0.4s ease-out backwards;
+}
+
+.buttons > div:nth-child(1) { animation-delay: 0.3s; }
+.buttons > div:nth-child(2) { animation-delay: 0.4s; }
+.buttons > div:nth-child(3) { animation-delay: 0.5s; }
+.buttons > div:nth-child(4) { animation-delay: 0.6s; }
 
 @media (max-width: 768px) {
     .buttons {
         width: 100%;
         max-width: 400px;
+        animation: fadeIn 0.5s ease-in;
     }
 }
 
@@ -55,11 +120,50 @@
     gap: 24px;
     min-width: 200px;
     flex: 0.8;
+    animation: slideInRight 0.6s ease-out 0.4s backwards;
 }
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.checkboxes > div {
+    animation: fadeInUp 0.4s ease-out backwards;
+}
+
+.checkboxes > div:nth-child(1) { animation-delay: 0.7s; }
+.checkboxes > div:nth-child(2) { animation-delay: 0.8s; }
 
 @media (max-width: 768px) {
     .checkboxes {
         width: 100%;
         max-width: 400px;
+        animation: fadeIn 0.5s ease-in;
+    }
+}
+
+/* Container hover effects */
+.inputs:hover, .buttons:hover, .checkboxes:hover {
+    transform: translateY(-2px);
+    transition: transform 0.3s ease;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .stand, .inputs, .buttons, .checkboxes,
+    .inputs > div, .buttons > div, .checkboxes > div {
+        animation: none;
+        transition: none;
+    }
+
+    .inputs:hover, .buttons:hover, .checkboxes:hover {
+        transform: none;
     }
 }
